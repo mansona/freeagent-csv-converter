@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import convertFile from '../lib/convert-file';
 
 /**
  * Most of this implementation comes from https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop
@@ -13,14 +14,13 @@ export default class DropzoneComponent extends Component {
         // If dropped items aren't files, reject them
         if (item.kind === 'file') {
           const file = item.getAsFile();
-
-          // TODO process file
+          convertFile(file);
         }
       });
     } else {
       // Use DataTransfer interface to access the file(s)
       [...event.dataTransfer.files].forEach((file, i) => {
-        // TODO process file
+        convertFile(file);
       });
     }
   }

@@ -1,1 +1,7 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+.dropzone {
+  border: 5px solid blue;
+  width: 200px;
+  height: 100px;
+}
